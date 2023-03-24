@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.recycler.MAIN
 import com.example.recycler.R
 import com.example.recycler.databinding.FragmentListBinding
@@ -23,7 +26,11 @@ class ListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonSearch.setOnClickListener() {
+        binding.buttonReturn.setOnClickListener() {
+            MAIN.navController.navigate(R.id.action_listFragment_to_FirstFragment)
+        }
+        binding.searchButton.setOnClickListener() {
+
         }
     }
 }

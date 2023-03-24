@@ -22,10 +22,12 @@ class FirstFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonFirst.setOnClickListener() {
+        binding.screensaverBackground.setOnClickListener() {
+            MAIN.navController.navigate(R.id.action_FirstFragment_to_listFragment)
+        }
+        binding.screensaverHandPicture.setOnClickListener {
             MAIN.navController.navigate(R.id.action_FirstFragment_to_listFragment)
         }
     }

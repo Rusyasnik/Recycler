@@ -6,24 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".fragment.FirstFragment">
 
-    <TextView
-        android:id="@+id/textview_first"
+    <ImageView
+        android:id="@+id/screensaver_background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
+        android:src="@drawable/screensaver_view"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/screensaver_hand_picture"
+        android:layout_width="603dp"
+        android:layout_height="554dp"
+        android:layout_marginTop="72dp"
+        android:src="@drawable/screensaver_hand_picture"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+        app:layout_constraintTop_toTopOf="@+id/screensaver_background" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

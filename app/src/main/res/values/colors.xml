@@ -12,4 +12,8 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
+    <color name="search_button">#80FAAE</color>
+    <color name="search_button_text">#00210F</color>
+    <color name="return_button">#BEEAF7</color>
+    <color name="return_icon">#001F26</color>
 </resources>
