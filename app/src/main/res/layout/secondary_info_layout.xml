@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/secondaryInfoLayout"
+    android:layout_width="330dp"
+    android:layout_height="80dp">
+
+    <TextView
+        android:id="@+id/tvSecondaryName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center|left"
+        android:text="Флакон"
+        android:textAppearance="@style/secondary_info_text_style"
+        app:layout_constraintBottom_toBottomOf="@id/tvSecondaryCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSecondaryCode"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="right|center"
+        android:text="PET"
+        android:textAppearance="@style/secondary_info_code_text_style"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSecondaryPlaceholder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingTop="10dp"
+        android:text="@string/secondary_placeholder"
+        android:textColor="#C0C9BF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvSecondaryCode"
+        app:layout_constraintStart_toEndOf="@+id/tvSecondaryName"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,8 +12,15 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
-    <color name="search_button">#80FAAE</color>
-    <color name="search_button_text">#00210F</color>
-    <color name="return_button">#BEEAF7</color>
-    <color name="return_icon">#001F26</color>
+    <color name="search_button_color">#80FAAE</color>
+    <color name="search_button_text_color">#00210F</color>
+    <color name="return_button_color">#BEEAF7</color>
+    <color name="return_icon_color">#001F26</color>
+    <color name="item_info_color">#FBFDF8</color>
+    <color name="error_dialog_color">#FBFDF8</color>
+    <color name="primary_info_tint">#0D006D3D</color>
+    <color name="secondary_info_tint">#1C006D3D</color>
+    <color name="error_dialog_tint">#1C006D3D</color>
+    <color name="description_background_color">#BEEAF7</color>
+    <color name="description_text_color">#001F26</color>
 </resources>

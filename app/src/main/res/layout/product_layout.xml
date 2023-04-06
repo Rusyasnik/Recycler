@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp">
+
+    <LinearLayout
+        android:id="@+id/primaryInfo"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="2dp"
+        android:layout_weight="50"
+        android:background="@drawable/rounded_primary_info_shape"
+        android:backgroundTint="@color/primary_info_tint"
+        android:backgroundTintMode="multiply"
+        android:minHeight="170dp"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingTop="27dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="27dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/base_name_string"
+            android:textAppearance="@style/product_name" />
+
+        <TextView
+            android:id="@+id/tvArt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@string/base_art_string"
+            android:textAppearance="@style/product_art_text_style"
+            android:textColor="#414942" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/secondaryInfo"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="2dp"
+        android:layout_weight="33"
+        android:background="@drawable/rounded_secondary_info_shape"
+        android:backgroundTint="@color/item_info_color"
+        android:backgroundTintMode="multiply"
+        android:minHeight="170dp"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+    </LinearLayout>
+
+</LinearLayout>

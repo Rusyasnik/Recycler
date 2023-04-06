@@ -4,13 +4,26 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="headline">Поиск</string>
-    <string name="text_label_1">What is this?</string>
-    <string name="text_label_2">And this?</string>
+    <string name="headline_base_string">Поиск</string>
+    <string name="background_string">Загрузка</string>
+    <string name="headline_string">Поиск</string>
+    <string name="base_name_string">КИСЛОРОДНАЯ ПРОФИЛАКТИЧЕСКАЯ ЗУБНАЯ ПАСТА МЯГКОЕ ОТБЕЛИВАНИЕ СЕРИИ FABERLIC</string>
+    <string name="base_art_string">2246</string>
+
+    <string name="error_dialog_title_string">Произошла ошибка при загрузке списка товаров</string>
+    <string name="error_dialog_text_string">Попробуйте ещё раз, или вернитесь на начальный экран</string>
+
+    <string name="error_dialog_positive_button">Повторить</string>
+    <string name="error_dialog_negative_button">На начальный экран</string>
+
+    <string name="secondary_flacon">Флакон</string>
+    <string name="secondary_tuba">Туба</string>
+    <string name="secondary_cap">Крышка/колпак</string>
+    <string name="secondary_dispenser">Дозатор/спрей</string>
+    <string name="secondary_jar">Банка</string>
+    <string name="secondary_glob">Шарик</string>
+    <string name="secondary_envelope">Пленка</string>
+    <string name="secondary_pencase">Пенал</string>
+    <string name="secondary_placeholder">........................................................</string>
 </resources>

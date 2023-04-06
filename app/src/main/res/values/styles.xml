@@ -5,8 +5,80 @@
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
 
-    <style name="headline">
-        <item name="android:textSize">32sp</item>
+    <style name="headline_text_style" parent="TextAppearance.AppCompat.Large">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">22sp</item>
         <item name="android:textColor">#00210F</item>
     </style>
+
+    <style name="product_name" parent="TextAppearance.AppCompat.Large">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#414942</item>
+    </style>
+
+    <style name="product_art_text_style" parent="TextAppearance.AppCompat.Large">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#414942</item>
+    </style>
+
+    <style name="secondary_info_text_style" parent="TextAppearance.AppCompat.Large">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#006D3D</item>
+    </style>
+
+    <style name="secondary_info_code_text_style" parent="TextAppearance.AppCompat.Large">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textFontWeight">800</item>
+        <item name="android:textColor">#006D3D</item>
+    </style>
+
+    <style name="error_dialog_title_style" parent="TextAppearance.AppCompat.Large">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#414942</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+    </style>
+
+    <style name="error_dialog_message_style" parent="TextAppearance.AppCompat.Large">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#414942</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="error_dialog_button_style" parent="TextAppearance.AppCompat.Large">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#006D3D</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="error_dialog_style">
+        <item name="android:windowBackground">@drawable/rounded_error_dialog_shape</item>
+        <item name="android:background">@drawable/rounded_error_dialog_shape</item>
+<!--        <item name="android:backgroundTint">@color/error_dialog_tint</item>-->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowTitleStyle">@style/error_dialog_title_style</item>
+        <item name="android:textAppearance">@style/error_dialog_message_style</item>
+        <item name="android:buttonBarButtonStyle">@style/error_dialog_button_style</item>
+        <item name="android:maxWidth">234dp</item>
+    </style>
+
+    <style name="description_text_style">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:textColor">#001F26</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
 </resources>
