@@ -1,10 +1,12 @@
 package com.example.recycler.fragments.operations
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recycler.MAIN
@@ -15,7 +17,7 @@ import com.example.recycler.inc
 import com.example.recycler.product.ProductAdapter
 import com.example.recycler.product.ProductModel
 
-class ViewOperations () {
+class ViewOperations {
 
     private val imm = MAIN.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 
