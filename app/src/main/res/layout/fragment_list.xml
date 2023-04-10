@@ -38,10 +38,12 @@
 
     <FrameLayout
         android:id="@+id/backgroundClicker"
-        android:layout_width="1dp"
-        android:layout_height="1dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:clickable="false"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -51,7 +53,7 @@
         android:id="@+id/buttonsLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="14dp"
         android:paddingBottom="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,36 +64,19 @@
             android:id="@+id/lockButton"
             android:layout_width="66dp"
             android:layout_height="54dp"
-            android:layout_marginEnd="18dp"
-            android:background="@drawable/lock_full_icon"
-            app:layout_constraintEnd_toStartOf="@id/itemSearch"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/itemSearch"
-            android:layout_width="555dp"
-            android:layout_height="54dp"
             android:layout_marginStart="18dp"
-            android:background="@drawable/rounded_edit_text_shape"
-            android:drawableStart="@drawable/search_icon"
-            android:drawablePadding="10dp"
-            android:ems="10"
-            android:hint="@string/headline_base_string"
-            android:imeOptions="actionSearch"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:textAppearance="@style/headline_text_style"
-            android:textColor="@color/search_button_text_color"
-            android:textStyle="normal"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/lockButton"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/lock_full_icon"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/searchButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="18dp"
             android:backgroundTint="@color/search_button_color"
             android:insetTop="0dp"
             android:insetBottom="0dp"
@@ -108,8 +93,85 @@
             app:icon="@drawable/search_icon"
             app:iconSize="30dp"
             app:iconTint="@color/search_button_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/lockButton"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/amountChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/red_circle"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/itemSearch"
+            android:layout_width="555dp"
+            android:layout_height="fill_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_edit_text_shape"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/lockButton"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/itemSearchInput"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
+                android:background="@null"
+                android:drawableStart="@drawable/search_icon"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/roboto"
+                android:hint="@string/headline_base_string"
+                android:imeOptions="actionSearch"
+                android:inputType="textFilter"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textAppearance="@style/headline_text_style"
+                android:textColor="@color/search_button_text_color"
+                android:textSize="24sp"
+                android:textStyle="normal"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/itemSearchAmount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/itemSearchAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="5dp"
+                android:paddingEnd="10dp"
+                android:text="Найдено: 0"
+                android:textColor="#006D3D"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/itemSearchClearButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/itemSearchClearButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:background="@null"
+                android:src="@drawable/clear_text_cross"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

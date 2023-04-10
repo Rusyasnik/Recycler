@@ -10,6 +10,8 @@
     <string name="headline_string">Поиск</string>
     <string name="base_name_string">КИСЛОРОДНАЯ ПРОФИЛАКТИЧЕСКАЯ ЗУБНАЯ ПАСТА МЯГКОЕ ОТБЕЛИВАНИЕ СЕРИИ FABERLIC</string>
     <string name="base_art_string">2246</string>
+    <string name="total_amount_string">Всего: %1$s</string>
+    <string name="search_amount_string">Найдено: %1$s</string>
 
     <string name="error_dialog_title_string">Произошла ошибка при загрузке списка товаров</string>
     <string name="error_dialog_text_string">Попробуйте ещё раз, или вернитесь на начальный экран</string>

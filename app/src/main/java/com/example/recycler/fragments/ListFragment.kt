@@ -2,11 +2,13 @@ package com.example.recycler.fragments
 
 import ProductListRaw
 import android.os.Bundle
+import android.os.Handler
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.core.view.size
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +23,7 @@ import com.example.recycler.product.ProductModel
 import com.example.recycler.product.operations.ItemOperations
 import com.example.recycler.retrofit.RetrofitClient
 import com.example.recycler.retrofit.RetrofitServices
+import kotlinx.coroutines.Runnable
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -63,6 +66,7 @@ class ListFragment : Fragment() {
         val productApi = retrofit.create(RetrofitServices::class.java)
         var products = mutableListOf<ProductModel>()
 
+
         binding.backgroundText.text = "Загрузка"
         binding.backgroundText.isVisible = true
 
@@ -95,16 +99,45 @@ class ListFragment : Fragment() {
             )
         }
 
-        binding.itemSearch.setOnFocusChangeListener { _, hasFocus ->
+        binding.itemSearchInput.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
-                viewOperations.showKeyboard(binding.itemSearch)
+                viewOperations.showKeyboard(binding.itemSearchInput)
+                binding.amountChip.isVisible = false
+
+                if (adapter.productList.size() == products.size) {
+                    binding.itemSearchAmount.text = String.format(
+                        resources.getString(R.string.total_amount_string),
+                        adapter.productList.size()
+                    )
+                    binding.itemSearchClearButton.isVisible = false
+                } else {
+                    binding.itemSearchAmount.text = String.format(
+                        resources.getString(R.string.search_amount_string),
+                        adapter.productList.size()
+                    )
+                    binding.itemSearchClearButton.isVisible = true
+                }
+                binding.itemSearchAmount.isVisible = true
+
             } else {
-                viewOperations.hideKeyboard(binding.itemSearch)
+                viewOperations.hideKeyboard(binding.itemSearchInput)
                 viewOperations.buttonTextCorrector(
-                    binding.itemSearch.text.toString(),
+                    binding.itemSearchInput.text.toString(),
                     binding.searchButton
                 )
+
+                if (adapter.productList.size() > 0) {
+                    binding.amountChip.setBackgroundResource(R.drawable.green_circle)
+                    binding.amountChip.text = adapter.productList.size().toString()
+                    binding.amountChip.isVisible = true
+                } else {
+                    binding.amountChip.setBackgroundResource(R.drawable.red_circle)
+                    binding.amountChip.text = adapter.productList.size().toString()
+                    binding.amountChip.isVisible = true
+                }
             }
+            if (adapter.productList.size() == products.size)
+                binding.amountChip.isVisible = false
         }
 
         binding.itemSearch.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
@@ -119,16 +152,26 @@ class ListFragment : Fragment() {
             false
         })
 
-        binding.itemSearch.doOnTextChanged { p0, _, _, count ->
+        binding.itemSearchInput.doOnTextChanged { p0, _, _, count ->
             if (p0?.length == 0) {
                 adapter.replaceAll(products)
                 binding.itemList.scrollToPosition(0)
+                binding.itemSearchAmount.text = String.format(
+                    resources.getString(R.string.total_amount_string),
+                    adapter.productList.size()
+                )
+                binding.itemSearchClearButton.isVisible = false
             } else {
                 val filteredProductList = itemOperations.filter(
                     products,
                     p0.toString()
                 )
                 adapter.replaceAll(filteredProductList)
+                binding.itemSearchAmount.text = String.format(
+                    resources.getString(R.string.search_amount_string),
+                    adapter.productList.size()
+                )
+                binding.itemSearchClearButton.isVisible = true
                 binding.itemList.scrollToPosition(0)
             }
             binding.backgroundText.isVisible = adapter.productList.size() == 0
@@ -141,5 +184,17 @@ class ListFragment : Fragment() {
                 binding.backgroundClicker
             )
         }
+
+        binding.itemSearchClearButton.setOnClickListener {
+            binding.itemSearchInput.text = null
+            binding.itemSearchClearButton.isVisible = false
+        }
+
+        binding.constraintLayout.setOnClickListener{
+            MAIN.stopHandler()
+            MAIN.startHandler()
+        }
+
+        MAIN.startHandler()
     }
 }
