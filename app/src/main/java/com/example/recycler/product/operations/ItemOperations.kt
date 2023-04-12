@@ -13,7 +13,7 @@ class ItemOperations {
         val lowerCaseQuery = query.lowercase()
 
         for (product in products) {
-            val text = product.productName!!.lowercase()
+            val text = product.productName!!.lowercase() + product.art!!.lowercase()
             if (text.contains(lowerCaseQuery)) {
                 filteredProductList.add(product)
             }

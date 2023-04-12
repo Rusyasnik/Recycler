@@ -152,7 +152,7 @@ class ListFragment : Fragment() {
             false
         })
 
-        binding.itemSearchInput.doOnTextChanged { p0, _, _, count ->
+        binding.itemSearchInput.doOnTextChanged { p0, _, _, _ ->
             if (p0?.length == 0) {
                 adapter.replaceAll(products)
                 binding.itemList.scrollToPosition(0)
